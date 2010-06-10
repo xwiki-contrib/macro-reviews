@@ -11,4 +11,9 @@
   <name>Contrib - Macros - Reviews</name>
   <version>1.0-SNAPSHOT</version>
   <description>A {{review}} macro that displays recently reviewed pages (comments or annotations).</description>
+  <scm>
+    <connection>scm:svn:http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/trunk/</developerConnection>
+    <url>http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/trunk/</url>
+  </scm>
 </project>
