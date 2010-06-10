@@ -9,11 +9,11 @@
   <artifactId>xwiki-macro-reviews</artifactId>
   <packaging>xar</packaging>
   <name>Contrib - Macros - Reviews</name>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <description>A {{review}} macro that displays recently reviewed pages (comments or annotations).</description>
   <scm>
-    <connection>scm:svn:http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/trunk</connection>
-    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/trunk</developerConnection>
-    <url>http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/trunk</url>
+    <connection>scm:svn:http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/tags/xwiki-macro-reviews-1.0</connection>
+    <developerConnection>scm:svn:https://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/tags/xwiki-macro-reviews-1.0</developerConnection>
+    <url>http://svn.xwiki.org/svnroot/xwiki/contrib/projects/xwiki-macro-reviews/tags/xwiki-macro-reviews-1.0</url>
   </scm>
 </project>
