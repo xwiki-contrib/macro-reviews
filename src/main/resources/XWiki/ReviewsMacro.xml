@@ -361,7 +361,13 @@ ul.reviews div.reviewsContainer {
 #end
 &lt;ul class="xlist xhighlight reviews"&gt;
 #set($query = "select max(reviewDate.value) as lastReview, doc.fullName from XWikiDocument as doc $queryFrom where $queryWhere group by doc.fullName order by max(reviewDate.value) desc")
-#foreach($result in $xwiki.search($query, $limit, 0))
+#set($matchingReviews = $xwiki.search($query, $limit, 0))
+#if(!$matchingReviews || $matchingReviews.size() &lt;= 0)
+
+{{info}}Snap. There are no matching reviews for the moment.{{/info}}
+
+#else
+#foreach($result in $matchingReviews)
 #set($documentName = $listtool.get($result, 1))
 #set($articleDoc=$xwiki.getDocument($documentName))
 #set($comments = $articleDoc.getObjects('XWiki.XWikiComments'))
@@ -438,6 +444,7 @@ ul.reviews div.reviewsContainer {
 &lt;/li&gt;
 #end
 &lt;/ul&gt;
+#end
 {{/html}}
 {{/velocity}}</code>
 </property>
