@@ -134,13 +134,11 @@ ul.reviews .reviewTime {
 
 ul.reviews div.annotationContainer {
   margin-bottom:5px;
-  text-align:justify;	
 }
 
 ul.reviews div.commentContainer {
   border:none;	
   display:table-cell;
-  text-align:justify;
   background:none;
 }
 
