@@ -9,19 +9,39 @@
 <creator>XWiki.Admin</creator>
 <author>XWiki.Admin</author>
 <customClass></customClass>
-<contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+<contentAuthor>XWiki.Admin</contentAuthor>
 <creationDate>1272488742000</creationDate>
-<date>1276126960000</date>
-<contentUpdateDate>1276126960000</contentUpdateDate>
+<date>1290108199000</date>
+<contentUpdateDate>1290108199000</contentUpdateDate>
 <version>1.1</version>
 <title>Reviews Macro</title>
 <template></template>
 <defaultTemplate></defaultTemplate>
 <validationScript></validationScript>
 <comment></comment>
-<minorEdit>true</minorEdit>
+<minorEdit>false</minorEdit>
 <syntaxId>xwiki/2.0</syntaxId>
-<hidden>false</hidden>
+<hidden>false</hidden><attachment>
+<filename>rquo.gif</filename>
+<filesize>184</filesize>
+<author>XWiki.Admin</author>
+<date>1290108119000</date>
+<version>1.1</version>
+<comment></comment><content>R0lGODlhFgAWALMPAKy1vdDV2efq7Fpse8TK0HGBjmZ2hbjAx5WgqqGrtImWofP09n2LmNzf405h
+cv///yH5BAEAAA8ALAAAAAAWABYAAARl8MlJq7046827z0HhDAdFGI4RXMLgvA4hBfDbWEDtFBKi
+Izido6fjVVo6wYNWM1wCKNiE0MxQd5WcQ5HxORIVxqt00TqUk8RrsLAsFDDARCB6ySwHGDcdxyDl
+FDQkH4SFhoeIGxEAOw==
+</content></attachment><attachment>
+<filename>lquo.gif</filename>
+<filesize>185</filesize>
+<author>XWiki.Admin</author>
+<date>1290108119000</date>
+<version>1.1</version>
+<comment></comment><content>R0lGODlhFgAWALMPAPP09ufq7LjAx3GBjpWgqlpse9zf48TK0H2LmKy1vWZ2hdDV2YmWoaGrtE5h
+cv///yH5BAEAAA8ALAAAAAAWABYAAARm8MlJq704682734lTBBRAOEOGOOwxBQrrkFYjM9QgN1cg
+CxQBq7DAnByEis4BxBRYxYlBBsD4ZAOD5CBzMKqVq6xQFXYRFkC39eCutZVYF6h+W0Jj8JGVupiz
+FEcINB+FhoeIiRcRADs=
+</content></attachment>
 <object>
 <class>
 <name>XWiki.StyleSheetExtension</name>
@@ -34,6 +54,7 @@
 <validationScript></validationScript>
 <cache>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>cache</name>
@@ -48,6 +69,7 @@
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </cache>
 <code>
+<disabled>0</disabled>
 <name>code</name>
 <number>2</number>
 <prettyName>Code</prettyName>
@@ -57,6 +79,7 @@
 <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </code>
 <name>
+<disabled>0</disabled>
 <name>name</name>
 <number>1</number>
 <prettyName>Name</prettyName>
@@ -65,6 +88,7 @@
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </name>
 <parse>
+<disabled>0</disabled>
 <displayFormType>select</displayFormType>
 <displayType>yesno</displayType>
 <name>parse</name>
@@ -75,6 +99,7 @@
 </parse>
 <use>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>use</name>
@@ -85,7 +110,7 @@
 <separators> ,|</separators>
 <size>1</size>
 <unmodifiable>0</unmodifiable>
-<values>onDemand=On demand|always=Always</values>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </use>
 </class>
@@ -104,7 +129,7 @@
 #macro(imgURL $name) url($xwiki.getSkinFile("icons/silk/${name}.gif")) #end
 
 ## Generate reference to background image
-#macro(attImgURL $name) url($doc.getAttachmentURL("${name}.png")) #end
+#macro(attImgURL $name) url($doc.getAttachmentURL("${name}")) #end
 
 ul.reviews div.head {
   font-size:1.2em;
@@ -176,13 +201,22 @@ ul.reviews div.otherReviews {
 ul.reviews div.reviewsContainer {
   float:left;
   width:100%;
-}</code>
-</property>
-<property>
-<name></name>
-</property>
-<property>
-<parse>1</parse>
+}
+
+div.commentQuote {
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 22px;
+}
+div.lQuo {
+    background-image: #attImgURL("lquo.gif");
+    float: left;
+}
+div.rQuo {
+    background-image: #attImgURL("rquo.gif");
+    float: right;
+}
+</code></property><property><name></name></property><property><parse>1</parse>
 </property>
 <property>
 <use>onDemand</use>
@@ -200,14 +234,15 @@ ul.reviews div.reviewsContainer {
 <validationScript></validationScript>
 <tags>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>input</displayType>
 <multiSelect>1</multiSelect>
 <name>tags</name>
 <number>1</number>
 <prettyName>Tags</prettyName>
 <relationalStorage>1</relationalStorage>
-<separator> </separator>
-<separators> ,|</separators>
+<separator>|</separator>
+<separators>|,</separators>
 <size>30</size>
 <unmodifiable>0</unmodifiable>
 <values></values>
@@ -233,8 +268,9 @@ ul.reviews div.reviewsContainer {
 <nameField></nameField>
 <validationScript></validationScript>
 <code>
+<disabled>0</disabled>
 <name>code</name>
-<number>8</number>
+<number>9</number>
 <prettyName>Macro code</prettyName>
 <rows>20</rows>
 <size>40</size>
@@ -242,8 +278,9 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </code>
 <contentDescription>
+<disabled>0</disabled>
 <name>contentDescription</name>
-<number>7</number>
+<number>8</number>
 <prettyName>Content description (Not applicable for "No content" type)</prettyName>
 <rows>5</rows>
 <size>40</size>
@@ -252,20 +289,22 @@ ul.reviews div.reviewsContainer {
 </contentDescription>
 <contentType>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>contentType</name>
-<number>6</number>
+<number>7</number>
 <prettyName>Macro content type</prettyName>
 <relationalStorage>0</relationalStorage>
 <separator>|</separator>
 <separators>|</separators>
 <size>1</size>
 <unmodifiable>0</unmodifiable>
-<values>Mandatory|Optional|No content</values>
+<values>Optional|Mandatory|No content</values>
 <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
 </contentType>
 <defaultCategory>
+<disabled>0</disabled>
 <name>defaultCategory</name>
 <number>4</number>
 <prettyName>Default category</prettyName>
@@ -274,6 +313,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </defaultCategory>
 <description>
+<disabled>0</disabled>
 <name>description</name>
 <number>3</number>
 <prettyName>Macro description</prettyName>
@@ -283,6 +323,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </description>
 <id>
+<disabled>0</disabled>
 <name>id</name>
 <number>1</number>
 <prettyName>Macro id</prettyName>
@@ -291,6 +332,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </id>
 <name>
+<disabled>0</disabled>
 <name>name</name>
 <number>2</number>
 <prettyName>Macro name</prettyName>
@@ -299,6 +341,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </name>
 <supportsInlineMode>
+<disabled>0</disabled>
 <displayFormType>select</displayFormType>
 <displayType>yesno</displayType>
 <name>supportsInlineMode</name>
@@ -309,10 +352,11 @@ ul.reviews div.reviewsContainer {
 </supportsInlineMode>
 <visibility>
 <cache>0</cache>
+<disabled>0</disabled>
 <displayType>select</displayType>
 <multiSelect>0</multiSelect>
 <name>visibility</name>
-<number>9</number>
+<number>6</number>
 <prettyName>Macro visibility</prettyName>
 <relationalStorage>0</relationalStorage>
 <separator>|</separator>
@@ -401,7 +445,7 @@ ul.reviews div.reviewsContainer {
       {{html wiki=false}}$xwiki.getUserName($latest.author){{/html}}
       &lt;span class="reviewTime"&gt;{{timeAgo}}$latest.getProperty('date').value.time{{/timeAgo}}&lt;/span&gt;
   &lt;/div&gt;
-	  &lt;div class="commentQuote lQuo"&gt;&amp;nbsp;&lt;/div&gt;
+      &lt;div class="commentQuote lQuo"&gt;&amp;nbsp;&lt;/div&gt;
       &lt;div class="commentQuote rQuo"&gt;&amp;nbsp;&lt;/div&gt;
       &lt;div class="annotation comment"&gt;$latest.annotation&lt;/div&gt;
   &lt;/div&gt;
@@ -482,6 +526,7 @@ ul.reviews div.reviewsContainer {
 <nameField></nameField>
 <validationScript></validationScript>
 <defaultValue>
+<disabled>0</disabled>
 <name>defaultValue</name>
 <number>4</number>
 <prettyName>Parameter default value</prettyName>
@@ -490,6 +535,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </defaultValue>
 <description>
+<disabled>0</disabled>
 <name>description</name>
 <number>2</number>
 <prettyName>Parameter description</prettyName>
@@ -499,6 +545,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </description>
 <mandatory>
+<disabled>0</disabled>
 <displayFormType>select</displayFormType>
 <displayType>yesno</displayType>
 <name>mandatory</name>
@@ -508,6 +555,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
 </mandatory>
 <name>
+<disabled>0</disabled>
 <name>name</name>
 <number>1</number>
 <prettyName>Parameter name</prettyName>
@@ -544,6 +592,7 @@ ul.reviews div.reviewsContainer {
 <nameField></nameField>
 <validationScript></validationScript>
 <defaultValue>
+<disabled>0</disabled>
 <name>defaultValue</name>
 <number>4</number>
 <prettyName>Parameter default value</prettyName>
@@ -552,6 +601,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
 </defaultValue>
 <description>
+<disabled>0</disabled>
 <name>description</name>
 <number>2</number>
 <prettyName>Parameter description</prettyName>
@@ -561,6 +611,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
 </description>
 <mandatory>
+<disabled>0</disabled>
 <displayFormType>select</displayFormType>
 <displayType>yesno</displayType>
 <name>mandatory</name>
@@ -570,6 +621,7 @@ ul.reviews div.reviewsContainer {
 <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
 </mandatory>
 <name>
+<disabled>0</disabled>
 <name>name</name>
 <number>1</number>
 <prettyName>Parameter name</prettyName>
