@@ -31,7 +31,7 @@
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>xwiki-macro-reviews</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <packaging>xar</packaging>
   <name>Contrib - Macros - Reviews</name>
   <description>A {{review}} macro that displays recently reviewed pages (comments or annotations).</description>
